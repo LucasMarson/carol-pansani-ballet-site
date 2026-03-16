@@ -1,25 +1,52 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { useEffect } from 'react';
+import Header from '@/components/Header';
+import HeroBanner from '@/components/HeroBanner';
+import Diferenciais from '@/components/Diferenciais';
+import Servicos from '@/components/Servicos';
+import Carousel from '@/components/Carousel';
+import Modalidades from '@/components/Modalidades';
+import SobreCarol from '@/components/SobreCarol';
+import Depoimentos from '@/components/Depoimentos';
+import Contato from '@/components/Contato';
+import Footer from '@/components/Footer';
 
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * Design Philosophy: Elegância Clássica com Modernidade
+ * - Rosa Pâle (#E8D4D0) como cor primária elegante
+ * - Azul Profundo (#2C3E50) para profissionalismo
+ * - Tipografia Serif (Playfair Display) para títulos
+ * - Espaçamento generoso e ritmo visual com alternância de cores
+ * - Animações suaves e transições fluidas
  */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const handleNavClick = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    // Scroll to top on mount
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+    <div className="min-h-screen flex flex-col bg-white">
+      <Header onNavClick={handleNavClick} />
+      
+      <main className="flex-1">
+        <HeroBanner />
+        <Diferenciais />
+        <Servicos />
+        <Carousel />
+        <Modalidades />
+        <SobreCarol />
+        <Depoimentos />
+        <Contato />
       </main>
+
+      <Footer />
     </div>
   );
 }
