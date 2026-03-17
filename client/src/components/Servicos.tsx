@@ -30,7 +30,7 @@ const servicos = [
 
 export default function Servicos() {
   return (
-    <section id="servicos" className="py-20 bg-rose-50">
+    <section id="servicos" className="py-20" style={{ background: 'linear-gradient(135deg, rgba(236, 224, 202, 0.4), rgba(224, 182, 160, 0.15))' }}>
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="heading-section">Nossos Serviços</h2>
@@ -46,11 +46,12 @@ export default function Servicos() {
             return (
               <div
                 key={index}
-                className="card-hover bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all"
+                className="card-hover bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border-t-4"
+                style={{ borderColor: '#e0b6a0' }}
               >
-                <Icon size={32} className="text-primary mb-4" />
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#2C3E50' }}>{servico.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{servico.description}</p>
+                <Icon size={32} style={{ color: '#08554c' }} className="mb-4" />
+                <h3 className="font-bold text-lg mb-3" style={{ color: '#1f545a' }}>{servico.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#1f545a' }}>{servico.description}</p>
               </div>
             );
           })}

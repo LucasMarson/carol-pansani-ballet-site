@@ -2,7 +2,7 @@ import { MessageCircle, Instagram, TrendingUp } from 'lucide-react';
 
 export default function Contato() {
   return (
-    <section id="contato" className="py-20 bg-rose-50">
+    <section id="contato" className="py-20" style={{ background: 'linear-gradient(135deg, rgba(236, 224, 202, 0.5), rgba(224, 182, 160, 0.2))' }}>
       <div className="container">
         {/* Instagram Section */}
         <div className="mb-16 text-center">
@@ -15,7 +15,8 @@ export default function Contato() {
             href="https://instagram.com/carolpansaniballet"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+            style={{ background: 'linear-gradient(135deg, #e0b6a0, #08554c)' }}
           >
             <Instagram size={20} />
             @carolpansaniballet
@@ -32,12 +33,13 @@ export default function Contato() {
               href="https://wa.me/5519982640644"
               target="_blank"
               rel="noopener noreferrer"
-              className="card-hover bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl"
+              className="card-hover bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl border-l-4"
+              style={{ borderColor: '#e0b6a0' }}
             >
-              <MessageCircle size={40} className="text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-lg mb-2" style={{ color: '#2C3E50' }}>WhatsApp</h3>
-              <p className="text-gray-600 font-semibold">(19) 98264-0644</p>
-              <p className="text-sm text-gray-500 mt-2">Resposta rápida</p>
+              <MessageCircle size={40} style={{ color: '#08554c' }} className="mx-auto mb-4" />
+              <h3 className="font-bold text-lg mb-2" style={{ color: '#1f545a' }}>WhatsApp</h3>
+              <p className="font-semibold" style={{ color: '#1f545a' }}>(19) 98264-0644</p>
+              <p className="text-sm mt-2" style={{ color: '#08554c' }}>Resposta rápida</p>
             </a>
 
             {/* Instagram */}
@@ -45,12 +47,13 @@ export default function Contato() {
               href="https://instagram.com/carolpansaniballet"
               target="_blank"
               rel="noopener noreferrer"
-              className="card-hover bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl"
+              className="card-hover bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl border-l-4"
+              style={{ borderColor: '#e0b6a0' }}
             >
-              <Instagram size={40} className="text-pink-500 mx-auto mb-4" />
-              <h3 className="font-bold text-lg mb-2" style={{ color: '#2C3E50' }}>Instagram</h3>
-              <p className="text-gray-600 font-semibold">@carolpansaniballet</p>
-              <p className="text-sm text-gray-500 mt-2">Conteúdo diário</p>
+              <Instagram size={40} style={{ color: '#e0b6a0' }} className="mx-auto mb-4" />
+              <h3 className="font-bold text-lg mb-2" style={{ color: '#1f545a' }}>Instagram</h3>
+              <p className="font-semibold" style={{ color: '#1f545a' }}>@carolpansaniballet</p>
+              <p className="text-sm mt-2" style={{ color: '#08554c' }}>Conteúdo diário</p>
             </a>
 
             {/* TikTok */}
@@ -58,17 +61,16 @@ export default function Contato() {
               href="https://tiktok.com/@carolpansaniballet"
               target="_blank"
               rel="noopener noreferrer"
-              className="card-hover bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl"
+              className="card-hover bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl border-l-4"
+              style={{ borderColor: '#e0b6a0' }}
             >
-              <TrendingUp size={40} className="text-black mx-auto mb-4" />
-              <h3 className="font-bold text-lg mb-2" style={{ color: '#2C3E50' }}>TikTok</h3>
-              <p className="text-gray-600 font-semibold">@carolpansaniballet</p>
-              <p className="text-sm text-gray-500 mt-2">Vídeos virais</p>
+              <TrendingUp size={40} style={{ color: '#165226' }} className="mx-auto mb-4" />
+              <h3 className="font-bold text-lg mb-2" style={{ color: '#1f545a' }}>TikTok</h3>
+              <p className="font-semibold" style={{ color: '#1f545a' }}>@carolpansaniballet</p>
+              <p className="text-sm mt-2" style={{ color: '#08554c' }}>Vídeos virais</p>
             </a>
           </div>
         </div>
-
-
       </div>
     </section>
   );

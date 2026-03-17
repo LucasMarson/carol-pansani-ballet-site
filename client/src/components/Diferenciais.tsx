@@ -2,17 +2,18 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function Diferenciais() {
   return (
-    <section id="diferenciais" className="py-20 bg-white">
+    <section id="diferenciais" className="py-20" style={{ background: 'linear-gradient(135deg, #fefdfb 0%, rgba(236, 224, 202, 0.3) 100%)' }}>
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Image Placeholder */}
-          <div className="relative h-96 md:h-full min-h-96 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl overflow-hidden shadow-lg order-2 md:order-1">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl mb-4">📸</div>
-                <p className="text-gray-600 font-semibold">Mosaico de Fotos</p>
-                <p className="text-sm text-gray-500 mt-2">Alunos, Carol e Espetáculos</p>
-              </div>
+          <div 
+            className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-lg order-2 md:order-1 flex items-center justify-center"
+            style={{ background: 'linear-gradient(135deg, rgba(224, 182, 160, 0.12), rgba(8, 85, 76, 0.08))' }}
+          >
+            <div className="text-center">
+              <div className="text-6xl mb-4">📸</div>
+              <p className="font-semibold" style={{ color: '#1f545a' }}>Mosaico de Fotos</p>
+              <p className="text-sm mt-2" style={{ color: '#08554c' }}>Alunos, Carol e Espetáculos</p>
             </div>
           </div>
 
@@ -37,16 +38,16 @@ export default function Diferenciais() {
 
             <div className="space-y-3 pt-4">
               <div className="flex items-start gap-3">
-                <CheckCircle size={24} className="text-primary flex-shrink-0 mt-1" />
-                <span className="text-gray-700">Professores 100% qualificados</span>
+                <CheckCircle size={24} style={{ color: '#e0b6a0' }} className="flex-shrink-0 mt-1" />
+                <span style={{ color: '#1f545a' }}>Professores 100% qualificados</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle size={24} className="text-primary flex-shrink-0 mt-1" />
-                <span className="text-gray-700">Formação baseada no Bolshoi</span>
+                <CheckCircle size={24} style={{ color: '#e0b6a0' }} className="flex-shrink-0 mt-1" />
+                <span style={{ color: '#1f545a' }}>Formação baseada no Bolshoi</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle size={24} className="text-primary flex-shrink-0 mt-1" />
-                <span className="text-gray-700">Acolhimento e profissionalismo</span>
+                <CheckCircle size={24} style={{ color: '#e0b6a0' }} className="flex-shrink-0 mt-1" />
+                <span style={{ color: '#1f545a' }}>Acolhimento e profissionalismo</span>
               </div>
             </div>
 

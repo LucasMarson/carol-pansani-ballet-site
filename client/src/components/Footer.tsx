@@ -2,13 +2,16 @@ import { Heart } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-deep text-white py-12">
+    <footer className="text-white py-12" style={{ background: '#1f545a' }}>
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About */}
           <div>
             <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-sm">
+              <div 
+                className="w-8 h-8 rounded-full flex items-center justify-center text-sm text-white font-bold"
+                style={{ background: 'linear-gradient(135deg, #e0b6a0, #d7c0b6)' }}
+              >
                 CPB
               </div>
               Carol Pansani Ballet
@@ -20,7 +23,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Links Rápidos</h4>
+            <h4 className="font-bold text-lg mb-4" style={{ color: '#e0b6a0' }}>Links Rápidos</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
                 <a href="#diferenciais" className="hover:text-white transition-colors">
@@ -52,7 +55,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Contato</h4>
+            <h4 className="font-bold text-lg mb-4" style={{ color: '#e0b6a0' }}>Contato</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
                 <a
@@ -88,13 +91,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 pt-8">
+        <div className="border-t pt-8" style={{ borderColor: 'rgba(224, 182, 160, 0.3)' }}>
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-300">
             <p>
               © 2024 Carol Pansani Ballet. Todos os direitos reservados.
             </p>
             <p className="flex items-center gap-2 mt-4 md:mt-0">
-              Feito com <Heart size={16} className="text-primary fill-primary" /> para a dança
+              Feito com <Heart size={16} style={{ color: '#e0b6a0' }} className="fill-current" /> para a dança
             </p>
           </div>
         </div>

@@ -100,7 +100,7 @@ export default function MapaUnidades() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Mapa */}
           <div className="lg:col-span-2">
-            <div className="rounded-xl overflow-hidden shadow-lg">
+            <div className="rounded-xl overflow-hidden shadow-lg border-2" style={{ borderColor: '#e0b6a0' }}>
               <MapView
                 initialCenter={{ lat: selectedUnidade.lat, lng: selectedUnidade.lng }}
                 initialZoom={14}
@@ -116,11 +116,13 @@ export default function MapaUnidades() {
               <button
                 key={unidade.id}
                 onClick={() => handleSelectUnidade(unidade)}
-                className={`w-full p-6 rounded-xl transition-all text-left ${
-                  selectedUnidade.id === unidade.id
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-white border-2 border-gray-200 hover:border-primary'
-                }`}
+                className="w-full p-6 rounded-xl transition-all text-left border-2"
+                style={{
+                  background: selectedUnidade.id === unidade.id ? '#e0b6a0' : '#ffffff',
+                  color: selectedUnidade.id === unidade.id ? '#1f545a' : '#1f545a',
+                  borderColor: selectedUnidade.id === unidade.id ? '#e0b6a0' : '#d7c0b6',
+                  boxShadow: selectedUnidade.id === unidade.id ? '0 8px 16px rgba(224, 182, 160, 0.3)' : 'none',
+                }}
               >
                 <h3 className="font-bold text-lg mb-2">{unidade.nome}</h3>
                 <div className="space-y-2 text-sm">
@@ -132,7 +134,7 @@ export default function MapaUnidades() {
                       <p>CEP: {unidade.cep}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 pt-2 border-t border-current border-opacity-20">
+                  <div className="flex items-center gap-2 pt-2 border-t" style={{ borderColor: selectedUnidade.id === unidade.id ? 'rgba(31, 84, 90, 0.2)' : 'rgba(31, 84, 90, 0.1)' }}>
                     <Phone size={16} />
                     <a
                       href={`https://wa.me/5519982640644`}
@@ -150,27 +152,28 @@ export default function MapaUnidades() {
         </div>
 
         {/* Informações Detalhadas */}
-        <div className="mt-12 bg-rose-50 rounded-xl p-8">
+        <div className="mt-12 rounded-xl p-8 border-2" style={{ background: 'linear-gradient(135deg, rgba(236, 224, 202, 0.3), rgba(224, 182, 160, 0.1))', borderColor: '#e0b6a0' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {unidades.map((unidade) => (
               <div key={unidade.id} className="space-y-4">
-                <h3 className="text-2xl font-bold" style={{ color: '#2C3E50' }}>
+                <h3 className="text-2xl font-bold" style={{ color: '#1f545a' }}>
                   {unidade.nome}
                 </h3>
-                <div className="space-y-3 text-gray-700">
+                <div className="space-y-3">
                   <div>
-                    <p className="font-semibold text-primary mb-1">Endereço</p>
-                    <p>{unidade.endereco}</p>
-                    <p>{unidade.bairro} - {unidade.cidade}-SP</p>
-                    <p>CEP: {unidade.cep}</p>
+                    <p className="font-semibold mb-1" style={{ color: '#e0b6a0' }}>Endereço</p>
+                    <p style={{ color: '#1f545a' }}>{unidade.endereco}</p>
+                    <p style={{ color: '#1f545a' }}>{unidade.bairro} - {unidade.cidade}-SP</p>
+                    <p style={{ color: '#1f545a' }}>CEP: {unidade.cep}</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-primary mb-1">Contato</p>
+                    <p className="font-semibold mb-1" style={{ color: '#e0b6a0' }}>Contato</p>
                     <a
                       href={`https://wa.me/5519982640644`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:underline font-semibold"
+                      className="hover:underline font-semibold"
+                      style={{ color: '#08554c' }}
                     >
                       {unidade.telefone}
                     </a>
@@ -180,7 +183,8 @@ export default function MapaUnidades() {
                       href={`https://www.google.com/maps/search/${encodeURIComponent(unidade.endereco + ', ' + unidade.cidade)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary hover:underline font-semibold"
+                      className="inline-flex items-center gap-2 hover:underline font-semibold"
+                      style={{ color: '#08554c' }}
                     >
                       <MapPin size={16} />
                       Ver no Google Maps
