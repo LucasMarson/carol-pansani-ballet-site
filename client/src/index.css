@@ -151,7 +151,7 @@
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
   }
 }
 
@@ -197,7 +197,7 @@
     line-height: 1.1;
     color: #1f545a;
     letter-spacing: -0.02em;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Black No.7', serif;
   }
 
   @media (max-width: 768px) {
@@ -211,7 +211,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     color: #1f545a;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Black No.7', serif;
     letter-spacing: -0.01em;
   }
 
