@@ -8,6 +8,7 @@ import Modalidades from '@/components/Modalidades';
 import SobreCarol from '@/components/SobreCarol';
 import Depoimentos from '@/components/Depoimentos';
 import Contato from '@/components/Contato';
+import MapaUnidades from '@/components/MapaUnidades';
 import Footer from '@/components/Footer';
 
 /**
@@ -43,6 +44,7 @@ export default function Home() {
         <Modalidades />
         <SobreCarol />
         <Depoimentos />
+        <MapaUnidades />
         <Contato />
       </main>
 

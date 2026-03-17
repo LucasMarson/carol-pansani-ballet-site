@@ -10,9 +10,10 @@ export default function Header({ onNavClick }: HeaderProps) {
 
   const navItems = [
     { label: 'Diferenciais', id: 'diferenciais' },
-    { label: 'Serviços', id: 'servicos' },
+    { label: 'Servicos', id: 'servicos' },
     { label: 'Modalidades', id: 'modalidades' },
     { label: 'Sobre Carol', id: 'sobre' },
+    { label: 'Mapas', id: 'mapas' },
     { label: 'Contato', id: 'contato' },
   ];
 

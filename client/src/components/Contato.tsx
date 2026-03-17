@@ -68,51 +68,7 @@ export default function Contato() {
           </div>
         </div>
 
-        {/* Locations */}
-        <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
-          <h2 className="heading-section text-center mb-12">Nossas Unidades</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Pedreira */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold" style={{ color: '#2C3E50' }}>Pedreira</h3>
-              <div className="space-y-2">
-                <p className="text-gray-700">
-                  <span className="font-semibold">Endereço:</span><br/>
-                  Rua XV de Novembro, nº 337<br/>
-                  Centro - Pedreira-SP<br/>
-                  CEP: 13920-009
-                </p>
-              </div>
-              <div className="bg-gray-200 rounded-lg h-48 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">📍</div>
-                  <p className="text-gray-600">Mapa do Google</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Jaguariúna */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold" style={{ color: '#2C3E50' }}>Jaguariúna</h3>
-              <div className="space-y-2">
-                <p className="text-gray-700">
-                  <span className="font-semibold">Endereço:</span><br/>
-                  Rua Cândido Bueno, nº 1299<br/>
-                  Sala 10, 2º andar - Centro<br/>
-                  Jaguariúna-SP<br/>
-                  CEP: 13910-033
-                </p>
-              </div>
-              <div className="bg-gray-200 rounded-lg h-48 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">📍</div>
-                  <p className="text-gray-600">Mapa do Google</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
