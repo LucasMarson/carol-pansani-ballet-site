@@ -39,8 +39,8 @@ const unidades: UnidadeInfo[] = [
     bairro: 'Centro',
     cidade: 'Jaguariúna',
     cep: '13910-033',
-    lat: -22.7066,
-    lng: -47.1957,
+    lat: -22.7081775,
+    lng: -46.9895503,
     telefone: '(19) 98264-0644',
   },
 ];
