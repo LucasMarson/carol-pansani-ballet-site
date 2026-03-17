@@ -24,19 +24,15 @@ export default function Header({ onNavClick }: HeaderProps) {
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50 border-b-2" style={{ borderColor: '#e0b6a0' }}>
-      <div className="container flex items-center justify-between py-4">
-        <div className="flex items-center gap-3">
-          <div 
-            className="w-11 h-11 rounded-full flex items-center justify-center text-white font-bold text-lg font-serif"
-            style={{ background: 'linear-gradient(135deg, #e0b6a0, #d7c0b6)' }}
-          >
-            CPB
-          </div>
-          <div className="hidden sm:block">
-            <h1 className="text-lg font-bold" style={{ color: '#1f545a' }}>Carol Pansani</h1>
-            <p className="text-xs" style={{ color: '#08554c' }}>Ballet</p>
-          </div>
-        </div>
+      <div className="container flex items-center justify-between py-3">
+        {/* Logo */}
+        <a href="#" onClick={() => handleNavClick('home')} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <img 
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/CarolPansani-variacaologos-01_43682f9d.webp"
+            alt="Carol Pansani Ballet"
+            className="h-20 w-auto"
+          />
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">

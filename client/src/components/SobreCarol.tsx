@@ -1,16 +1,17 @@
 export default function SobreCarol() {
   return (
-    <section id="sobre" className="py-20 bg-rose-50">
+    <section id="sobre" className="py-20" style={{ background: 'linear-gradient(135deg, rgba(236, 224, 202, 0.3), rgba(224, 182, 160, 0.1))' }}>
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Image Placeholder */}
-          <div className="relative h-96 md:h-full min-h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden shadow-xl">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl mb-4">👩‍🎨</div>
-                <p className="text-gray-600 font-semibold">Foto da Carol</p>
-                <p className="text-sm text-gray-500 mt-2">Bailarina & Diretora</p>
-              </div>
+          <div 
+            className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-xl flex items-center justify-center"
+            style={{ background: 'linear-gradient(135deg, rgba(224, 182, 160, 0.15), rgba(215, 192, 182, 0.15))' }}
+          >
+            <div className="text-center">
+              <div className="text-6xl mb-4">👩‍🎨</div>
+              <p className="font-semibold" style={{ color: '#1f545a' }}>Foto da Carol</p>
+              <p className="text-sm mt-2" style={{ color: '#08554c' }}>Bailarina & Diretora</p>
             </div>
           </div>
 
@@ -53,11 +54,11 @@ export default function SobreCarol() {
               Hoje, Carol dedica seu trabalho a formar não apenas bailarinos, mas pessoas que aprendem a serem quem sempre sonharam ser através da dança.
             </p>
 
-            <div className="bg-white p-6 rounded-lg border-l-4 border-primary mt-8">
-              <p className="italic text-gray-700">
+            <div className="bg-white p-6 rounded-lg border-l-4 mt-8" style={{ borderColor: '#e0b6a0' }}>
+              <p className="italic" style={{ color: '#1f545a' }}>
                 "Porque, pra mim, dança não é apenas aprendizado. É uma forma de crescer, se expressar e encontrar o seu lugar – na arte e na vida."
               </p>
-              <p className="mt-4 font-semibold text-primary">Com carinho,<br/>Carol Pansani 💕</p>
+              <p className="mt-4 font-semibold" style={{ color: '#e0b6a0' }}>Com carinho,<br/>Carol Pansani 💕</p>
             </div>
           </div>
         </div>
