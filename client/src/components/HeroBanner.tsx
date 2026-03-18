@@ -34,16 +34,13 @@ export default function HeroBanner() {
             </a>
           </div>
 
-          {/* Right Image Placeholder */}
-          <div 
-            className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-xl flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, rgba(224, 182, 160, 0.15), rgba(215, 192, 182, 0.15))' }}
-          >
-            <div className="text-center">
-              <div className="text-6xl mb-4">🩰</div>
-              <p className="font-semibold" style={{ color: '#1f545a' }}>Galeria de Fotos</p>
-              <p className="text-sm mt-2" style={{ color: '#08554c' }}>Adicione imagens aqui</p>
-            </div>
+          {/* Hero Ballet Performance Image */}
+          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-hero-01-5VF7Xn7CF6xp2bCMM3cEDb.webp"
+              alt="Ballet Performance - Carol Pansani"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

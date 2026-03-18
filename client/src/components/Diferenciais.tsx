@@ -5,16 +5,13 @@ export default function Diferenciais() {
     <section id="diferenciais" className="py-20" style={{ background: 'linear-gradient(135deg, #fefdfb 0%, rgba(236, 224, 202, 0.3) 100%)' }}>
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Image Placeholder */}
-          <div 
-            className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-lg order-2 md:order-1 flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, rgba(224, 182, 160, 0.12), rgba(8, 85, 76, 0.08))' }}
-          >
-            <div className="text-center">
-              <div className="text-6xl mb-4">📸</div>
-              <p className="font-semibold" style={{ color: '#1f545a' }}>Mosaico de Fotos</p>
-              <p className="text-sm mt-2" style={{ color: '#08554c' }}>Alunos, Carol e Espetáculos</p>
-            </div>
+          {/* Ballet Class Image */}
+          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-lg order-2 md:order-1">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-class-01-B95wJZiohWiUoRdWS8Q5oy.webp"
+              alt="Aula de Ballet - Carol Pansani"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Right Content */}

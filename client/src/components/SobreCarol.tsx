@@ -3,16 +3,13 @@ export default function SobreCarol() {
     <section id="sobre" className="py-20" style={{ background: 'linear-gradient(135deg, rgba(236, 224, 202, 0.3), rgba(224, 182, 160, 0.1))' }}>
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Image Placeholder */}
-          <div 
-            className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-xl flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, rgba(224, 182, 160, 0.15), rgba(215, 192, 182, 0.15))' }}
-          >
-            <div className="text-center">
-              <div className="text-6xl mb-4">👩‍🎨</div>
-              <p className="font-semibold" style={{ color: '#1f545a' }}>Foto da Carol</p>
-              <p className="text-sm mt-2" style={{ color: '#08554c' }}>Bailarina & Diretora</p>
-            </div>
+          {/* Carol Portrait Image */}
+          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-carol-portrait-UZvk3ksMwfy3SAk7Zk5YMP.webp"
+              alt="Carol Pansani - Diretora e Bailarina"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Right Content */}

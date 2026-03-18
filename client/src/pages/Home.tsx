@@ -9,6 +9,7 @@ import SobreCarol from '@/components/SobreCarol';
 import Depoimentos from '@/components/Depoimentos';
 import Contato from '@/components/Contato';
 import MapaUnidades from '@/components/MapaUnidades';
+import Galeria from '@/components/Galeria';
 import Footer from '@/components/Footer';
 
 /**
@@ -43,6 +44,7 @@ export default function Home() {
         <Carousel />
         <Modalidades />
         <SobreCarol />
+        <Galeria />
         <Depoimentos />
         <MapaUnidades />
         <Contato />
