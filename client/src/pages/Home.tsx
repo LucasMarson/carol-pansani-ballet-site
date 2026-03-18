@@ -10,6 +10,7 @@ import Depoimentos from '@/components/Depoimentos';
 import Contato from '@/components/Contato';
 import MapaUnidades from '@/components/MapaUnidades';
 import Galeria from '@/components/Galeria';
+import FeedSocial from '@/components/FeedSocial';
 import Footer from '@/components/Footer';
 
 /**
@@ -45,6 +46,7 @@ export default function Home() {
         <Modalidades />
         <SobreCarol />
         <Galeria />
+        <FeedSocial />
         <Depoimentos />
         <MapaUnidades />
         <Contato />

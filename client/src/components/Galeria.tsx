@@ -45,7 +45,16 @@ const galeriaItems: GaleriaItem[] = [
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-detail-pointe-ET2hAewx34JHUeRgw2LPMp.webp',
     category: 'detalhe',
   },
+  {
+    id: '6',
+    title: 'Studio Interior',
+    description: 'Espaço de prática com espelhos e barras',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-studio-interior-maHniPdU2waeDzK4yqqAhy.webp',
+    category: 'studio',
+  },
 ];
+
+// Imagens do Instagram serão adicionadas dinamicamente via FeedSocial component
 
 export default function Galeria() {
   const [selectedImage, setSelectedImage] = useState<GaleriaItem | null>(null);
