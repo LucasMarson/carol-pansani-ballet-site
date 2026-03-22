@@ -1,40 +1,43 @@
 import { useState } from 'react';
 import { ChevronDown, MapPin } from 'lucide-react';
 
-// Ícones customizados
+// Ícones customizados elegantes
 const BalletIcon = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="8" r="4" fill="#1f545a" />
-    <path d="M20 12L15 18V26L18 32V36H22V32L25 26V18L20 12Z" fill="#1f545a" />
-    <path d="M12 20L8 16M28 20L32 16" stroke="#1f545a" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="20" cy="8" r="3" fill="#1f545a" />
+    <path d="M20 11C18 11 16 12.5 16 14.5L16 20C16 22 17 24 18 26L18 30H22L22 26C23 24 24 22 24 20L24 14.5C24 12.5 22 11 20 11Z" fill="#1f545a" />
+    <path d="M13 15L10 12M27 15L30 12" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M16 26L14 32M24 26L26 32" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const JazzIcon = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="8" r="4" fill="#1f545a" />
-    <path d="M20 12L18 20L16 28L20 32L24 28L22 20L20 12Z" fill="#1f545a" opacity="0.7" />
-    <path d="M14 18L10 14M26 18L30 14" stroke="#1f545a" strokeWidth="2" strokeLinecap="round" />
-    <path d="M16 28L12 36M24 28L28 36" stroke="#1f545a" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="20" cy="8" r="3" fill="#1f545a" />
+    <path d="M20 11L18 16L16 24L20 28L24 24L22 16L20 11Z" fill="#1f545a" />
+    <path d="M14 16L10 12M26 16L30 12" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M16 24L12 32M24 24L28 32" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M14 20L10 18" stroke="#1f545a" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
   </svg>
 );
 
 const ContemporaryIcon = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="8" r="4" fill="#1f545a" />
-    <path d="M20 12L16 16L14 24L18 32L22 24L20 16L20 12Z" fill="#1f545a" />
-    <path d="M12 16L8 12M28 16L32 12" stroke="#1f545a" strokeWidth="2" strokeLinecap="round" />
-    <path d="M14 24Q10 20 8 28" stroke="#1f545a" strokeWidth="2" strokeLinecap="round" fill="none" />
-    <path d="M26 24Q30 20 32 28" stroke="#1f545a" strokeWidth="2" strokeLinecap="round" fill="none" />
+    <circle cx="20" cy="8" r="3" fill="#1f545a" />
+    <path d="M20 11L18 15L16 22L18 28L20 30L22 28L24 22L22 15L20 11Z" fill="#1f545a" />
+    <path d="M12 16L8 12M28 16L32 12" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M14 22Q10 18 8 26" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+    <path d="M26 22Q30 18 32 26" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" fill="none" />
   </svg>
 );
 
 const YogaIcon = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="8" r="4" fill="#1f545a" />
-    <path d="M20 12L18 16L16 22L20 28L24 22L22 16L20 12Z" fill="#1f545a" />
-    <path d="M14 18L10 16M26 18L30 16" stroke="#1f545a" strokeWidth="2" strokeLinecap="round" />
-    <path d="M16 24L12 28M24 24L28 28" stroke="#1f545a" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="20" cy="8" r="3" fill="#1f545a" />
+    <path d="M20 11L18 16L16 22L18 28L20 30L22 28L24 22L22 16L20 11Z" fill="#1f545a" />
+    <path d="M14 16L10 14M26 16L30 14" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M16 22L12 26M24 22L28 26" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M18 28L16 32M22 28L24 32" stroke="#1f545a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
