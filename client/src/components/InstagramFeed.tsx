@@ -43,25 +43,9 @@ export default function InstagramFeed() {
             <h2 className="heading-section">Últimas Postagens</h2>
           </div>
           <div className="section-divider mx-auto mb-6"></div>
-          <p className="text-body max-w-2xl mx-auto mb-8">
+          <p className="text-body max-w-2xl mx-auto">
             Acompanhe os últimos momentos, aulas e apresentações direto do Instagram
           </p>
-          
-          {/* CTA para seguir */}
-          <a
-            href="https://instagram.com/carolpansaniballet"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
-            style={{
-              background: 'linear-gradient(135deg, #e0b6a0, #d7c0b6)',
-              color: '#1f545a',
-            }}
-          >
-            <Instagram size={20} />
-            Seguir @carolpansaniballet
-            <ExternalLink size={18} />
-          </a>
         </div>
 
         {/* Grid de Posts */}

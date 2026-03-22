@@ -6,7 +6,7 @@ export default function Diferenciais() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Ballet Class Image */}
-          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-lg order-2 md:order-1">
+          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-lg order-2 md:order-2">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-class-01-B95wJZiohWiUoRdWS8Q5oy.webp"
               alt="Aula de Ballet - Carol Pansani"
@@ -14,8 +14,8 @@ export default function Diferenciais() {
             />
           </div>
 
-          {/* Right Content */}
-          <div className="space-y-6 order-1 md:order-2">
+          {/* Left Content */}
+          <div className="space-y-6 order-1 md:order-1">
             <div>
               <h2 className="heading-section">Uma Escola Diferente de Tudo</h2>
               <div className="section-divider"></div>

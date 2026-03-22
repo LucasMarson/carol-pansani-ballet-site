@@ -5,7 +5,16 @@ export default function HeroBanner() {
     <section className="pt-32 pb-20" style={{ background: 'linear-gradient(135deg, #fefdfb 0%, rgba(224, 182, 160, 0.08) 50%, #fefdfb 100%)' }}>
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+          {/* Hero Ballet Performance Image */}
+          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-hero-01-5VF7Xn7CF6xp2bCMM3cEDb.webp"
+              alt="Ballet Performance - Carol Pansani"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Right Content */}
           <div className="space-y-8">
             <div>
               <h1 className="heading-display mb-4">
@@ -32,15 +41,6 @@ export default function HeroBanner() {
               Agende uma Visita
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </a>
-          </div>
-
-          {/* Hero Ballet Performance Image */}
-          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-xl">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-hero-01-5VF7Xn7CF6xp2bCMM3cEDb.webp"
-              alt="Ballet Performance - Carol Pansani"
-              className="w-full h-full object-cover"
-            />
           </div>
         </div>
       </div>
