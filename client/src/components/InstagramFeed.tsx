@@ -22,15 +22,12 @@ export default function InstagramFeed() {
     };
   }, []);
 
-  // Lista de URLs de posts do Instagram para exibir
+  // Lista de URLs de posts do Instagram para exibir (últimas 3 postagens)
   // Substitua pelos IDs reais dos seus posts
   const instagramPostUrls = [
     'https://www.instagram.com/p/XXXXXXXXX/', // Substitua com ID real
     'https://www.instagram.com/p/YYYYYYYYY/', // Substitua com ID real
     'https://www.instagram.com/p/ZZZZZZZZZ/', // Substitua com ID real
-    'https://www.instagram.com/p/AAAAAAAAAA/', // Substitua com ID real
-    'https://www.instagram.com/p/BBBBBBBBBB/', // Substitua com ID real
-    'https://www.instagram.com/p/CCCCCCCCCC/', // Substitua com ID real
   ];
 
   return (
@@ -49,7 +46,7 @@ export default function InstagramFeed() {
         </div>
 
         {/* Grid de Posts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {instagramPostUrls.map((url, index) => (
             <div
               key={index}
