@@ -81,8 +81,8 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
 
   return (
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="relative bg-white/95 backdrop-blur-md rounded-2xl w-full max-w-md shadow-2xl border border-white/20 overflow-hidden">
-        {/* Botão fechar - VISÍVEL E DESTACADO */}
+      <div className="relative bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden">
+        {/* Botão fechar */}
         <button
           onClick={() => setIsOpen(false)}
           className="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition z-10 flex items-center justify-center"
@@ -91,120 +91,133 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
           <X className="w-5 h-5 text-gray-700" />
         </button>
 
-        {/* Conteúdo */}
-        <div className="p-6 md:p-8">
-          {/* Imagem */}
-          <div className="mb-6 -mx-6 -mt-6 mb-6">
+        {/* Layout Grid: Imagem Esquerda + Formulário Direita */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+          {/* LADO ESQUERDO - IMAGEM */}
+          <div className="hidden md:flex items-center justify-center bg-cover bg-center min-h-full">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-jaguariana-waitlist-popup-6h5mT3ErZfzUYWgCkd4NTP.webp"
               alt="Carol Pansani Ballet - Jaguariúna"
-              className="w-full h-32 object-cover rounded-t-2xl"
+              className="w-full h-full object-cover"
             />
           </div>
 
-          {/* Título */}
-          <h2 className="text-2xl md:text-3xl font-black text-[#1f545a] mb-2">
-            Um novo espaço para viver a dança 💛
-          </h2>
+          {/* LADO DIREITO - CONTEÚDO E FORMULÁRIO */}
+          <div className="p-6 md:p-8 flex flex-col justify-center">
+            {/* Imagem em mobile (topo) */}
+            <div className="md:hidden mb-6">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-jaguariana-waitlist-popup-6h5mT3ErZfzUYWgCkd4NTP.webp"
+                alt="Carol Pansani Ballet - Jaguariúna"
+                className="w-full h-40 object-cover rounded-lg"
+              />
+            </div>
 
-          {/* Subtítulo */}
-          <p className="text-sm md:text-base text-[#08554c] font-semibold mb-2">
-            A nova unidade da Carol Pansani Ballet está chegando em Jaguariúna ✨
-          </p>
+            {/* Título */}
+            <h2 className="text-2xl md:text-3xl font-black text-[#1f545a] mb-3">
+              Um novo espaço para viver a dança 💛
+            </h2>
 
-          <p className="text-xs md:text-sm text-gray-700 mb-4">
-            Um lugar pensado para acolher, desenvolver e transformar através do movimento.
-          </p>
-
-          {/* Destaque */}
-          <div className="bg-gradient-to-r from-[#ece0ca] to-[#f5ede0] border-l-4 border-[#e0b6a0] p-3 mb-6 rounded-lg">
-            <p className="text-[#1f545a] font-bold text-xs md:text-sm">
-              🎁 Desconto + presente exclusivo para os 30 primeiros matriculados
+            {/* Subtítulo */}
+            <p className="text-sm md:text-base text-[#08554c] font-semibold mb-2">
+              A nova unidade da Carol Pansani Ballet está chegando em Jaguariúna ✨
             </p>
-          </div>
 
-          {/* Formulário */}
-          <form onSubmit={handleSubmit} className="space-y-3">
-            {/* Nome */}
-            <div>
-              <label className="block text-xs font-semibold text-gray-700 mb-1">
-                Nome completo *
-              </label>
-              <input
-                type="text"
-                name="nome"
-                value={formData.nome}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
-                placeholder="Seu nome"
-              />
+            {/* Descrição */}
+            <p className="text-xs md:text-sm text-gray-700 mb-4">
+              Um lugar pensado para acolher, desenvolver e transformar através do movimento.
+            </p>
+
+            {/* Destaque */}
+            <div className="bg-gradient-to-r from-[#ece0ca] to-[#f5ede0] border-l-4 border-[#e0b6a0] p-3 mb-6 rounded-lg">
+              <p className="text-[#1f545a] font-bold text-xs md:text-sm">
+                🎁 Desconto + presente exclusivo para os 30 primeiros matriculados
+              </p>
             </div>
 
-            {/* Email */}
-            <div>
-              <label className="block text-xs font-semibold text-gray-700 mb-1">
-                Email *
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
-                placeholder="seu@email.com"
-              />
-            </div>
+            {/* Formulário */}
+            <form onSubmit={handleSubmit} className="space-y-3">
+              {/* Nome */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                  Nome completo *
+                </label>
+                <input
+                  type="text"
+                  name="nome"
+                  value={formData.nome}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
+                  placeholder="Seu nome"
+                />
+              </div>
 
-            {/* Telefone */}
-            <div>
-              <label className="block text-xs font-semibold text-gray-700 mb-1">
-                Telefone/WhatsApp *
-              </label>
-              <input
-                type="tel"
-                name="telefone"
-                value={formData.telefone}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
-                placeholder="(11) 99999-9999"
-              />
-            </div>
+              {/* Email */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
+                  placeholder="seu@email.com"
+                />
+              </div>
 
-            {/* Modalidade */}
-            <div>
-              <label className="block text-xs font-semibold text-gray-700 mb-1">
-                Modalidade de interesse *
-              </label>
-              <select
-                name="modalidade"
-                value={formData.modalidade}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
+              {/* Telefone */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                  Telefone/WhatsApp *
+                </label>
+                <input
+                  type="tel"
+                  name="telefone"
+                  value={formData.telefone}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
+                  placeholder="(11) 99999-9999"
+                />
+              </div>
+
+              {/* Modalidade */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">
+                  Modalidade de interesse *
+                </label>
+                <select
+                  name="modalidade"
+                  value={formData.modalidade}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
+                >
+                  <option value="">Selecione uma modalidade</option>
+                  <option value="Ballet">Ballet</option>
+                  <option value="Jazz">Jazz</option>
+                  <option value="Dança Contemporânea">Dança Contemporânea</option>
+                </select>
+              </div>
+
+              {/* Botão Submit */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-[#e0b6a0] to-[#d7a590] hover:from-[#d7a590] hover:to-[#c89580] text-white font-bold py-2.5 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed mt-4 shadow-md text-sm md:text-base"
               >
-                <option value="">Selecione uma modalidade</option>
-                <option value="Ballet">Ballet</option>
-                <option value="Jazz">Jazz</option>
-                <option value="Dança Contemporânea">Dança Contemporânea</option>
-              </select>
-            </div>
+                {isSubmitting ? 'Enviando...' : 'Quero fazer parte'}
+              </button>
 
-            {/* Botão Submit */}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-[#e0b6a0] to-[#d7a590] hover:from-[#d7a590] hover:to-[#c89580] text-white font-bold py-2.5 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed mt-4 shadow-md text-sm md:text-base"
-            >
-              {isSubmitting ? 'Enviando...' : 'Quero fazer parte'}
-            </button>
-
-            <p className="text-xs text-gray-600 text-center mt-2">
-              Você será redirecionado para o WhatsApp para confirmar sua inscrição.
-            </p>
-          </form>
+              <p className="text-xs text-gray-600 text-center mt-2">
+                Você será redirecionado para o WhatsApp para confirmar sua inscrição.
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </div>
