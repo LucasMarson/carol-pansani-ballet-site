@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import WhatsAppButton from "./components/WhatsAppButton";
+import { WaitlistPopup } from "./components/WaitlistPopup";
 
 
 function Router() {
@@ -35,6 +36,7 @@ function App() {
           <Toaster />
           <Router />
           <WhatsAppButton />
+          <WaitlistPopup />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
