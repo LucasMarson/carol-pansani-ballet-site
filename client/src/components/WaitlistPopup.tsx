@@ -103,7 +103,7 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
           </div>
 
           {/* LADO DIREITO - CONTEÚDO E FORMULÁRIO */}
-          <div className="p-5 md:p-6 flex flex-col justify-between h-96">
+          <div className="p-5 md:p-6 flex flex-col justify-between" style={{height: '572px'}}>
             {/* Imagem em mobile (topo) */}
             <div className="md:hidden mb-3">
               <img
