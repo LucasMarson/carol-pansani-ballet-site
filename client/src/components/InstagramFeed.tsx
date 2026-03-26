@@ -172,38 +172,7 @@ export default function InstagramFeed() {
           </div>
         )}
 
-        {/* Info Box */}
-        <div
-          className="mt-16 p-8 rounded-xl text-center border-2"
-          style={{
-            background: 'linear-gradient(135deg, rgba(236, 224, 202, 0.5), rgba(224, 182, 160, 0.2))',
-            borderColor: '#e0b6a0',
-          }}
-        >
-          <h3 className="text-xl font-bold mb-4" style={{ color: '#1f545a' }}>
-            ✨ Feed Automático em Tempo Real
-          </h3>
-          <p style={{ color: '#08554c' }} className="mb-4 text-base">
-            Os 3 posts mais recentes aparecem automaticamente! O site se atualiza a cada 5 minutos.
-          </p>
-          <ul
-            className="text-left max-w-2xl mx-auto space-y-2"
-            style={{ color: '#1f545a' }}
-          >
-            <li className="flex gap-2">
-              <span style={{ color: '#e0b6a0' }}>✓</span>
-              <span>Quando você postar no Instagram, o site atualiza automaticamente</span>
-            </li>
-            <li className="flex gap-2">
-              <span style={{ color: '#e0b6a0' }}>✓</span>
-              <span>O post mais recente sempre aparece em primeiro lugar</span>
-            </li>
-            <li className="flex gap-2">
-              <span style={{ color: '#e0b6a0' }}>✓</span>
-              <span>Sem necessidade de atualizar o site manualmente</span>
-            </li>
-          </ul>
-        </div>
+
 
         {/* Link para Instagram */}
         <div className="text-center mt-12">
