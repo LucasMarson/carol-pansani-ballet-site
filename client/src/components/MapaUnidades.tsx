@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
-import { MapView } from './Map';
+import { useState } from 'react';
 import { Phone, MapPin } from 'lucide-react';
 
 interface UnidadeInfo {
@@ -11,9 +10,8 @@ interface UnidadeInfo {
   bairro: string;
   cidade: string;
   cep: string;
-  lat: number;
-  lng: number;
   telefone: string;
+  mapEmbed: string;
 }
 
 const unidades: UnidadeInfo[] = [
@@ -26,9 +24,8 @@ const unidades: UnidadeInfo[] = [
     bairro: 'Centro',
     cidade: 'Pedreira',
     cep: '13920-009',
-    lat: -22.7419,
-    lng: -47.4087,
     telefone: '(19) 98264-0644',
+    mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.6597215390166!2d-46.908745724984115!3d-22.740885731962422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8dea5c9867bb1%3A0x4d005b529ae901b9!2sCarol%20Pansani%20Ballet!5e0!3m2!1spt-BR!2sbr!4v1774541214762!5m2!1spt-BR!2sbr',
   },
   {
     id: 'jaguariuna',
@@ -39,145 +36,13 @@ const unidades: UnidadeInfo[] = [
     bairro: 'Centro',
     cidade: 'Jaguariúna',
     cep: '13910-033',
-    lat: -22.7081775,
-    lng: -46.9895503,
     telefone: '(19) 98264-0644',
+    mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.6128818792067!2d-46.987814321342924!3d-22.705450577561287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8e8071e58db99%3A0xa74436cbc662ee6b!2sR.%20C%C3%A2ndido%20Bueno%2C%201299%20-%20Centro%2C%20Jaguari%C3%BAna%20-%20SP%2C%2013820-000!5e0!3m2!1spt-BR!2sbr!4v1774541290276!5m2!1spt-BR!2sbr',
   },
 ];
 
 export default function MapaUnidades() {
   const [selectedUnidade, setSelectedUnidade] = useState<UnidadeInfo>(unidades[0]);
-  const mapRef = useRef<google.maps.Map | null>(null);
-  const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
-  const infoWindowsRef = useRef<google.maps.InfoWindow[]>([]);
-
-  const handleMapReady = (map: google.maps.Map) => {
-    mapRef.current = map;
-    // Definir limites do mapa para mostrar ambas as unidades
-    const bounds = new google.maps.LatLngBounds();
-    unidades.forEach(unidade => {
-      bounds.extend({ lat: unidade.lat, lng: unidade.lng });
-    });
-    map.fitBounds(bounds);
-    
-    // Adicionar um padding para melhor visualização
-    map.setZoom(12);
-    
-    addMarkers(map);
-  };
-
-  const createMarkerContent = (unidade: UnidadeInfo, isSelected: boolean) => {
-    const container = document.createElement('div');
-    container.style.display = 'flex';
-    container.style.alignItems = 'center';
-    container.style.justifyContent = 'center';
-    container.style.width = isSelected ? '48px' : '40px';
-    container.style.height = isSelected ? '48px' : '40px';
-    container.style.borderRadius = '50%';
-    container.style.backgroundColor = isSelected ? '#e0b6a0' : '#08554c';
-    container.style.border = '3px solid white';
-    container.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
-    container.style.cursor = 'pointer';
-    container.style.transition = 'all 0.3s ease';
-    container.style.fontSize = isSelected ? '24px' : '20px';
-
-    const icon = document.createElement('span');
-    icon.textContent = unidade.id === 'pedreira' ? '🩰' : '✨';
-    container.appendChild(icon);
-
-    return container;
-  };
-
-  const createInfoWindowContent = (unidade: UnidadeInfo) => {
-    return `
-      <div style="font-family: Arial, sans-serif; padding: 12px; max-width: 250px;">
-        <h3 style="margin: 0 0 8px 0; color: #1f545a; font-size: 16px; font-weight: bold;">
-          ${unidade.nome}
-        </h3>
-        <div style="color: #555; font-size: 13px; line-height: 1.5;">
-          <p style="margin: 4px 0;"><strong>📍 Endereço:</strong></p>
-          <p style="margin: 0 0 8px 0;">${unidade.rua}, nº ${unidade.numero}</p>
-          <p style="margin: 4px 0;"><strong>Bairro:</strong> ${unidade.bairro}</p>
-          <p style="margin: 4px 0;"><strong>CEP:</strong> ${unidade.cep}</p>
-          <p style="margin: 8px 0 4px 0;"><strong>📱 Telefone:</strong></p>
-          <a href="https://wa.me/5519982640644" target="_blank" rel="noopener noreferrer" style="color: #08554c; text-decoration: none; font-weight: bold;">
-            ${unidade.telefone}
-          </a>
-        </div>
-      </div>
-    `;
-  };
-
-  const addMarkers = (map: google.maps.Map) => {
-    // Limpar marcadores e info windows antigos
-    markersRef.current.forEach(marker => marker.element?.remove());
-    infoWindowsRef.current.forEach(infoWindow => infoWindow.close());
-    markersRef.current = [];
-    infoWindowsRef.current = [];
-
-    // Adicionar novos marcadores
-    unidades.forEach((unidade) => {
-      const marker = new google.maps.marker.AdvancedMarkerElement({
-        map,
-        position: { lat: unidade.lat, lng: unidade.lng },
-        title: unidade.nome,
-        content: createMarkerContent(unidade, selectedUnidade.id === unidade.id),
-      });
-
-      // Criar info window
-      const infoWindow = new google.maps.InfoWindow({
-        content: createInfoWindowContent(unidade),
-      });
-
-      marker.addListener('click', () => {
-        // Fechar todas as info windows
-        infoWindowsRef.current.forEach(iw => iw.close());
-        
-        // Abrir a info window do marcador clicado
-        infoWindow.open(map, marker);
-        
-        // Atualizar seleção
-        setSelectedUnidade(unidade);
-        map.setCenter({ lat: unidade.lat, lng: unidade.lng });
-        map.setZoom(15);
-      });
-
-      markersRef.current.push(marker);
-      infoWindowsRef.current.push(infoWindow);
-    });
-
-    // Abrir info window da unidade selecionada por padrão
-    if (markersRef.current.length > 0) {
-      infoWindowsRef.current[0].open(map, markersRef.current[0]);
-    }
-  };
-
-  const handleSelectUnidade = (unidade: UnidadeInfo) => {
-    setSelectedUnidade(unidade);
-    if (mapRef.current) {
-      // Fechar todas as info windows
-      infoWindowsRef.current.forEach(iw => iw.close());
-      
-      // Encontrar o marcador correspondente e abrir sua info window
-      const markerIndex = unidades.findIndex(u => u.id === unidade.id);
-      if (markerIndex !== -1 && infoWindowsRef.current[markerIndex]) {
-        infoWindowsRef.current[markerIndex].open(mapRef.current, markersRef.current[markerIndex]);
-      }
-      
-      mapRef.current.setCenter({ lat: unidade.lat, lng: unidade.lng });
-      mapRef.current.setZoom(15);
-    }
-  };
-
-  // Atualizar marcadores quando a unidade selecionada mudar
-  useEffect(() => {
-    if (mapRef.current) {
-      markersRef.current.forEach((marker, index) => {
-        const unidade = unidades[index];
-        marker.content = createMarkerContent(unidade, selectedUnidade.id === unidade.id);
-      });
-    }
-  }, [selectedUnidade]);
 
   return (
     <section id="mapas" className="py-20 bg-white">
@@ -194,12 +59,16 @@ export default function MapaUnidades() {
           {/* Mapa */}
           <div className="lg:col-span-2">
             <div className="rounded-xl overflow-hidden shadow-lg border-2" style={{ borderColor: '#e0b6a0' }}>
-              <MapView
-                initialCenter={{ lat: -22.7250, lng: -47.1990 }}
-                initialZoom={12}
-                onMapReady={handleMapReady}
-                className="w-full h-[500px]"
-              />
+              <iframe
+                src={selectedUnidade.mapEmbed}
+                width="100%"
+                height="500"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Mapa - ${selectedUnidade.nome}`}
+              ></iframe>
             </div>
           </div>
 
@@ -208,7 +77,7 @@ export default function MapaUnidades() {
             {unidades.map((unidade) => (
               <button
                 key={unidade.id}
-                onClick={() => handleSelectUnidade(unidade)}
+                onClick={() => setSelectedUnidade(unidade)}
                 className="w-full p-6 rounded-xl transition-all text-left border-2"
                 style={{
                   background: selectedUnidade.id === unidade.id ? '#e0b6a0' : '#ffffff',
