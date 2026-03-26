@@ -80,21 +80,21 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-6">
-      <div className="relative bg-white rounded-2xl w-full max-w-4xl max-h-[70vh] shadow-2xl overflow-hidden flex flex-col">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="relative bg-white rounded-2xl w-full max-w-5xl shadow-2xl overflow-hidden">
         {/* Botão fechar */}
         <button
           onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition z-10 flex items-center justify-center"
+          className="absolute top-3 right-3 p-1.5 bg-gray-100 hover:bg-gray-200 rounded-full transition z-10 flex items-center justify-center"
           title="Fechar"
         >
-          <X className="w-5 h-5 text-gray-700" />
+          <X className="w-4 h-4 text-gray-700" />
         </button>
 
         {/* Layout Grid: Imagem Esquerda + Formulário Direita */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* LADO ESQUERDO - IMAGEM */}
-          <div className="hidden md:flex items-center justify-center bg-cover bg-center">
+          <div className="hidden md:flex items-center justify-center bg-cover bg-center h-96">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-jaguariana-waitlist-popup-6h5mT3ErZfzUYWgCkd4NTP.webp"
               alt="Carol Pansani Ballet - Jaguariúna"
@@ -103,40 +103,40 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
           </div>
 
           {/* LADO DIREITO - CONTEÚDO E FORMULÁRIO */}
-          <div className="p-6 md:p-8 flex flex-col justify-center overflow-y-auto">
+          <div className="p-5 md:p-6 flex flex-col justify-between h-96">
             {/* Imagem em mobile (topo) */}
-            <div className="md:hidden mb-6">
+            <div className="md:hidden mb-3">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-jaguariana-waitlist-popup-6h5mT3ErZfzUYWgCkd4NTP.webp"
                 alt="Carol Pansani Ballet - Jaguariúna"
-                className="w-full h-40 object-cover rounded-lg"
+                className="w-full h-24 object-cover rounded-lg"
               />
             </div>
 
             {/* Título */}
-            <h2 className="text-2xl md:text-3xl font-black text-[#1f545a] mb-3">
+            <h2 className="text-xl md:text-2xl font-black text-[#1f545a] mb-1.5 leading-tight">
               Um novo espaço para viver a dança 💛
             </h2>
 
             {/* Subtítulo */}
-            <p className="text-sm md:text-base text-[#08554c] font-semibold mb-2">
+            <p className="text-xs md:text-sm text-[#08554c] font-semibold mb-1">
               A nova unidade da Carol Pansani Ballet está chegando em Jaguariúna ✨
             </p>
 
             {/* Descrição */}
-            <p className="text-xs md:text-sm text-gray-700 mb-4">
+            <p className="text-xs text-gray-700 mb-2 leading-snug">
               Um lugar pensado para acolher, desenvolver e transformar através do movimento.
             </p>
 
             {/* Destaque */}
-            <div className="bg-gradient-to-r from-[#ece0ca] to-[#f5ede0] border-l-4 border-[#e0b6a0] p-3 mb-6 rounded-lg">
-              <p className="text-[#1f545a] font-bold text-xs md:text-sm">
+            <div className="bg-gradient-to-r from-[#ece0ca] to-[#f5ede0] border-l-4 border-[#e0b6a0] p-2 mb-3 rounded-lg">
+              <p className="text-[#1f545a] font-bold text-xs leading-tight">
                 🎁 Desconto + presente exclusivo para os 30 primeiros matriculados
               </p>
             </div>
 
             {/* Formulário */}
-            <form onSubmit={handleSubmit} className="space-y-2.5">
+            <form onSubmit={handleSubmit} className="space-y-2">
               {/* Nome */}
               <div>
                 <label className="block text-xs font-semibold text-gray-700 mb-0.5">
@@ -148,7 +148,7 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
                   value={formData.nome}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
+                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
                   placeholder="Seu nome"
                 />
               </div>
@@ -164,7 +164,7 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
+                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
                   placeholder="seu@email.com"
                 />
               </div>
@@ -180,7 +180,7 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
                   value={formData.telefone}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
+                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
                   placeholder="(11) 99999-9999"
                 />
               </div>
@@ -195,7 +195,7 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
                   value={formData.modalidade}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
+                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e0b6a0] focus:border-transparent transition"
                 >
                   <option value="">Selecione uma modalidade</option>
                   <option value="Ballet">Ballet</option>
@@ -208,14 +208,10 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[#e0b6a0] to-[#d7a590] hover:from-[#d7a590] hover:to-[#c89580] text-white font-bold py-2.5 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed mt-4 shadow-md text-sm md:text-base"
+                className="w-full bg-gradient-to-r from-[#e0b6a0] to-[#d7a590] hover:from-[#d7a590] hover:to-[#c89580] text-white font-bold py-2 rounded-md transition disabled:opacity-50 disabled:cursor-not-allowed mt-2 shadow-md text-xs md:text-sm"
               >
                 {isSubmitting ? 'Enviando...' : 'Quero fazer parte'}
               </button>
-
-              <p className="text-xs text-gray-600 text-center mt-2">
-                Você será redirecionado para o WhatsApp para confirmar sua inscrição.
-              </p>
             </form>
           </div>
         </div>
