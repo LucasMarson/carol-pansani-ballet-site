@@ -3,10 +3,15 @@ import { ArrowRight } from 'lucide-react';
 // Componentes de ícones customizados - versão elegante
 const BallerinasIcon = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="8" r="3.5" fill="#08554c" />
-    <path d="M20 11.5C18 11.5 16 13 16 15.5L16 22C16 24 17 26 18 28L18 32H22L22 28C23 26 24 24 24 22L24 15.5C24 13 22 11.5 20 11.5Z" fill="#08554c" />
-    <path d="M13 16L10 13M27 16L30 13" stroke="#08554c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M16 28L14 35M24 28L26 35" stroke="#08554c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="20" cy="5" r="3" fill="#08554c" />
+    <path d="M20 8L18 14C17.5 15 17 16 17 17.5L17 24" stroke="#08554c" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M20 8L22 14C22.5 15 23 16 23 17.5L23 24" stroke="#08554c" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M17 12L8 6" stroke="#08554c" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M23 12L32 6" stroke="#08554c" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M17 24L14 36" stroke="#08554c" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M23 24L26 36" stroke="#08554c" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="14" cy="37" r="1.2" fill="#08554c" />
+    <circle cx="26" cy="37" r="1.2" fill="#08554c" />
   </svg>
 );
 

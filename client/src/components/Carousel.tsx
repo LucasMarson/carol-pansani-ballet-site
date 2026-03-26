@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const fotos = [
   { id: 1, title: 'Aulas', image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-class-01-B95wJZiohWiUoRdWS8Q5oy.webp' },
@@ -11,6 +11,7 @@ const fotos = [
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -27,18 +28,26 @@ export default function Carousel() {
     setCurrentIndex((prev) => (prev + 1) % fotos.length);
   };
 
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
   return (
     <section className="py-20 bg-white">
       <div className="container">
         <h2 className="heading-section text-center mb-12">Galeria de Momentos</h2>
 
-        <div className="relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden h-96 md:h-[500px] shadow-xl">
+        <div className="relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden h-96 md:h-[500px] shadow-xl cursor-pointer hover:shadow-2xl transition-shadow" onClick={openLightbox}>
           {/* Carousel Items */}
           <div className="relative w-full h-full flex items-center justify-center">
             <img
               src={fotos[currentIndex].image}
               alt={fotos[currentIndex].title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hover:opacity-90 transition-opacity"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-8">
               <div>
@@ -50,14 +59,20 @@ export default function Carousel() {
 
           {/* Navigation Buttons */}
           <button
-            onClick={goToPrevious}
+            onClick={(e) => {
+              e.stopPropagation();
+              goToPrevious();
+            }}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all z-10"
           >
             <ChevronLeft size={24} className="text-primary" />
           </button>
 
           <button
-            onClick={goToNext}
+            onClick={(e) => {
+              e.stopPropagation();
+              goToNext();
+            }}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all z-10"
           >
             <ChevronRight size={24} className="text-primary" />
@@ -68,7 +83,10 @@ export default function Carousel() {
             {fotos.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentIndex(index);
+                }}
                 className={`w-2 h-2 rounded-full transition-all ${
                   index === currentIndex ? 'bg-primary w-8' : 'bg-white/60'
                 }`}
@@ -77,6 +95,58 @@ export default function Carousel() {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {isLightboxOpen && (
+        <div 
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+          onClick={closeLightbox}
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-51"
+          >
+            <X size={40} />
+          </button>
+          
+          <div 
+            className="relative max-w-6xl w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={fotos[currentIndex].image}
+              alt={fotos[currentIndex].title}
+              className="max-w-full max-h-full object-contain"
+            />
+            
+            {/* Navigation in Lightbox */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full transition-all"
+            >
+              <ChevronLeft size={32} className="text-white" />
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full transition-all"
+            >
+              <ChevronRight size={32} className="text-white" />
+            </button>
+            
+            <div className="absolute bottom-6 text-center text-white">
+              <p className="text-xl font-semibold">{fotos[currentIndex].title}</p>
+              <p className="text-white/80 mt-2">Foto {currentIndex + 1} de {fotos.length}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
