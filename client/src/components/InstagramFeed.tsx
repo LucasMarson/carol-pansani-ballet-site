@@ -31,7 +31,7 @@ export default function InstagramFeed() {
   ];
 
   return (
-    <section id="instagram-feed" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="instagram-feed" className="py-20 bg-white">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-16">
@@ -45,15 +45,15 @@ export default function InstagramFeed() {
           </p>
         </div>
 
-        {/* Grid de Posts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* Grid de Posts - 3 colunas */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {instagramPostUrls.map((url, index) => (
             <div
               key={index}
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border"
               style={{
-                background: '#f5f5f5',
-                minHeight: '400px',
+                borderColor: '#e0b6a0',
+                minHeight: '450px',
               }}
             >
               <blockquote
@@ -63,14 +63,15 @@ export default function InstagramFeed() {
                 style={{
                   background: '#FFF',
                   border: '0',
-                  borderRadius: '3px',
+                  borderRadius: '0',
                   boxShadow: 'none',
                   display: 'block',
                   margin: '0 auto',
-                  maxWidth: '540px',
-                  minWidth: '326px',
+                  maxWidth: '100%',
+                  minWidth: '100%',
                   padding: '0',
                   width: '100%',
+                  height: '100%',
                 }}
               />
             </div>
@@ -79,51 +80,72 @@ export default function InstagramFeed() {
 
         {/* Instrução de Configuração */}
         <div
-          className="mt-16 p-8 rounded-lg text-center"
+          className="mt-16 p-8 rounded-xl text-center border-2"
           style={{
-            background: 'linear-gradient(135deg, #ece0ca, #f5f5f5)',
-            border: '2px solid #e0b6a0',
+            background: 'linear-gradient(135deg, rgba(236, 224, 202, 0.5), rgba(224, 182, 160, 0.2))',
+            borderColor: '#e0b6a0',
           }}
         >
-          <h3 className="text-xl font-bold mb-3" style={{ color: '#1f545a' }}>
-            📸 Como Configurar o Feed
+          <h3 className="text-xl font-bold mb-4" style={{ color: '#1f545a' }}>
+            📸 Como Configurar com Suas Postagens Reais
           </h3>
-          <p style={{ color: '#08554c' }} className="mb-4">
-            Para exibir seus posts reais do Instagram, siga estes passos:
+          <p style={{ color: '#08554c' }} className="mb-6 text-base">
+            Para exibir suas últimas postagens do Instagram automaticamente:
           </p>
           <ol
-            className="text-left max-w-2xl mx-auto space-y-2"
+            className="text-left max-w-3xl mx-auto space-y-3"
             style={{ color: '#1f545a' }}
           >
-            <li>
-              <strong>1.</strong> Acesse seu perfil do Instagram (@carolpansaniballet)
+            <li className="flex gap-3">
+              <span className="font-bold flex-shrink-0" style={{ color: '#e0b6a0' }}>1.</span>
+              <span>Abra seu perfil do Instagram (@carolpansaniballet)</span>
             </li>
-            <li>
-              <strong>2.</strong> Clique em um post que deseja exibir
+            <li className="flex gap-3">
+              <span className="font-bold flex-shrink-0" style={{ color: '#e0b6a0' }}>2.</span>
+              <span>Clique em um post que deseja exibir</span>
             </li>
-            <li>
-              <strong>3.</strong> Clique nos três pontos (⋯) → "Copiar link"
+            <li className="flex gap-3">
+              <span className="font-bold flex-shrink-0" style={{ color: '#e0b6a0' }}>3.</span>
+              <span>Clique nos três pontos (⋯) → "Copiar link"</span>
             </li>
-            <li>
-              <strong>4.</strong> Substitua as URLs no arquivo{' '}
-              <code style={{ background: '#fff', padding: '2px 6px', borderRadius: '4px' }}>
-                InstagramFeed.tsx
-              </code>
+            <li className="flex gap-3">
+              <span className="font-bold flex-shrink-0" style={{ color: '#e0b6a0' }}>4.</span>
+              <span>
+                Abra o arquivo <code style={{ background: '#fff', padding: '4px 8px', borderRadius: '4px', fontFamily: 'monospace' }}>
+                  client/src/components/InstagramFeed.tsx
+                </code>
+              </span>
             </li>
-            <li>
-              <strong>5.</strong> Salve o arquivo e o site atualizará automaticamente
+            <li className="flex gap-3">
+              <span className="font-bold flex-shrink-0" style={{ color: '#e0b6a0' }}>5.</span>
+              <span>Substitua as URLs (XXXXXXXXX, YYYYYYYYY, ZZZZZZZZZ) pelos IDs reais dos seus posts</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="font-bold flex-shrink-0" style={{ color: '#e0b6a0' }}>6.</span>
+              <span>Salve o arquivo (Ctrl + S) e o site atualizará automaticamente</span>
             </li>
           </ol>
-          <p className="mt-4 text-sm" style={{ color: '#d7c0b6' }}>
-            Os posts serão atualizados em tempo real quando você interagir com eles no Instagram
+          <p className="mt-6 text-sm font-medium" style={{ color: '#08554c' }}>
+            ✨ Os posts aparecem em tempo real quando você interage com eles no Instagram
           </p>
         </div>
 
-        {/* Informação adicional */}
+        {/* Link para Instagram */}
         <div className="text-center mt-12">
-          <p style={{ color: '#d7c0b6' }} className="text-sm">
-            Quando você postar no Instagram, o site mostra automaticamente sem precisar atualizar manualmente
-          </p>
+          <a
+            href="https://instagram.com/carolpansaniballet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all hover:shadow-lg"
+            style={{
+              background: 'linear-gradient(135deg, #e0b6a0, #08554c)',
+              color: '#fff',
+            }}
+          >
+            <Instagram size={20} />
+            Ver Mais no Instagram
+            <ExternalLink size={16} />
+          </a>
         </div>
       </div>
     </section>

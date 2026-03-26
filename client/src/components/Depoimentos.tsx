@@ -37,34 +37,58 @@ export default function Depoimentos() {
           {depoimentos.map((depoimento) => (
             <div
               key={depoimento.id}
-              className="card-hover bg-rose-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all"
+              className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+              style={{ backgroundColor: '#ece0ca' }}
             >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-accent text-accent" />
-                ))}
-              </div>
+              {/* Background decorativo */}
+              <div 
+                className="absolute inset-0 opacity-10"
+                style={{ backgroundColor: '#e0b6a0' }}
+              ></div>
 
-              <p 
-                className="italic leading-relaxed mb-6"
-                style={{ color: '#1f545a' }}
-              >
-                "{depoimento.texto}"
-              </p>
+              {/* Conteúdo */}
+              <div className="relative p-8 h-full flex flex-col">
+                {/* Estrelas */}
+                <div className="flex gap-1 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star 
+                      key={i} 
+                      size={18} 
+                      className="fill-current transition-all"
+                      style={{ color: '#e0b6a0' }}
+                    />
+                  ))}
+                </div>
 
-              <div className="border-t pt-4" style={{ borderColor: '#e0b6a0' }}>
-                <h3 
-                  className="font-bold text-lg"
+                {/* Texto do depoimento */}
+                <p 
+                  className="italic leading-relaxed mb-6 flex-grow text-sm"
                   style={{ color: '#1f545a' }}
                 >
-                  {depoimento.nome}
-                </h3>
-                <p 
-                  className="text-sm"
-                  style={{ color: '#d7c0b6' }}
-                >
-                  {depoimento.relacao}
+                  "{depoimento.texto}"
                 </p>
+
+                {/* Divisor */}
+                <div 
+                  className="h-px my-6"
+                  style={{ backgroundColor: '#e0b6a0' }}
+                ></div>
+
+                {/* Informações do autor */}
+                <div className="space-y-1">
+                  <h3 
+                    className="font-bold text-base"
+                    style={{ color: '#1f545a' }}
+                  >
+                    {depoimento.nome}
+                  </h3>
+                  <p 
+                    className="text-xs font-medium"
+                    style={{ color: '#08554c' }}
+                  >
+                    {depoimento.relacao}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
