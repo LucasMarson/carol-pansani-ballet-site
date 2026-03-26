@@ -37,50 +37,34 @@ export default function InstagramFeed() {
         // Usar a API do Instagram Graph (você precisa configurar um token de acesso)
         // Por enquanto, vamos usar uma abordagem alternativa que funciona sem autenticação
         
-        // Opção 1: Usar um serviço público que não requer autenticação
-        const username = 'carolpansaniballet';
-        
-        // Buscar dados do perfil via endpoint público (sem autenticação)
-        const response = await fetch(
-          `https://www.instagram.com/api/v1/users/web_profile_info/?username=${username}`,
+        // Posts reais do Instagram da Carol Pansani Ballet
+        const instagramPosts = [
           {
-            headers: {
-              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            }
+            id: '1',
+            url: 'https://www.instagram.com/p/DWH_lBHjr43/',
+            caption: 'Últimas aulas de ballet',
+            timestamp: 'Recente'
+          },
+          {
+            id: '2',
+            url: 'https://www.instagram.com/reel/DWSNtL1ji3c/',
+            caption: 'Momentos especiais da escola',
+            timestamp: 'Recente'
+          },
+          {
+            id: '3',
+            url: 'https://www.instagram.com/reel/DWANdmUjiKT/',
+            caption: 'Apresentações e eventos',
+            timestamp: 'Recente'
           }
-        ).catch(() => null);
+        ];
 
-        if (response && response.ok) {
-          const data = await response.json();
-          const user = data.data.user;
-          
-          // Extrair os 3 posts mais recentes
-          const recentPosts = user.edge_owner_to_timeline_media.edges
-            .slice(0, 3)
-            .map((edge: any) => ({
-              id: edge.node.id,
-              url: `https://www.instagram.com/p/${edge.node.shortcode}/`,
-              caption: edge.node.edge_media_to_caption.edges[0]?.node.text || '',
-              timestamp: new Date(edge.node.taken_at_timestamp * 1000).toLocaleDateString('pt-BR'),
-            }));
+        setPosts(instagramPosts);
+        setError(null);
 
-          setPosts(recentPosts);
-          setError(null);
-
-          // Reprocessar embeds do Instagram
-          if ((window as any).instgrm) {
-            (window as any).instgrm.Embeds.process();
-          }
-        } else {
-          // Se a API falhar, usar posts padrão
-          setPosts([
-            {
-              id: '1',
-              url: 'https://www.instagram.com/p/DWH_lBHjr43/',
-              caption: 'Últimas aulas de ballet',
-              timestamp: 'Hoje'
-            }
-          ]);
+        // Reprocessar embeds do Instagram
+        if ((window as any).instgrm) {
+          (window as any).instgrm.Embeds.process();
         }
       } catch (err) {
         console.error('Erro ao buscar posts do Instagram:', err);

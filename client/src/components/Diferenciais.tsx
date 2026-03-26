@@ -8,7 +8,7 @@ export default function Diferenciais() {
           {/* Ballet Class Image */}
           <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-lg order-2 md:order-2">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-class-01-B95wJZiohWiUoRdWS8Q5oy.webp"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/DSC02043_2b8faf88.webp"
               alt="Aula de Ballet - Carol Pansani"
               className="w-full h-full object-cover"
             />

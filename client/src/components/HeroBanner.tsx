@@ -5,7 +5,7 @@ export default function HeroBanner() {
     <section 
       className="relative pt-40 pb-40 overflow-hidden"
       style={{
-        backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-hero-01-5VF7Xn7CF6xp2bCMM3cEDb.webp)',
+        backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/DSC02043_2b8faf88.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
