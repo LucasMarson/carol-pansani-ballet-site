@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const fotos = [
-  { id: 1, title: 'Aulas', emoji: '🎭' },
-  { id: 2, title: 'Espetáculo', emoji: '✨' },
-  { id: 3, title: 'Produtos', emoji: '🛍️' },
-  { id: 4, title: 'Coreografias', emoji: '💃' },
-  { id: 5, title: 'Comunidade', emoji: '👯' },
-  { id: 6, title: 'Apresentações', emoji: '🎪' },
+  { id: 1, title: 'Aulas', image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-class-01-B95wJZiohWiUoRdWS8Q5oy.webp' },
+  { id: 2, title: 'Espetáculo', image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/andeliraph-0968_0909eabe.webp' },
+  { id: 3, title: 'Apresentação', image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/DSC02043_2b8faf88.webp' },
+  { id: 4, title: 'Dueto', image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/andeliraph-2188_4984c258.webp' },
+  { id: 5, title: 'Performance', image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-ballet-performance-01-6SG3k7mJZHqN8dWvC9yBnL.webp' },
 ];
 
 export default function Carousel() {
@@ -36,11 +35,15 @@ export default function Carousel() {
         <div className="relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden h-96 md:h-[500px] shadow-xl">
           {/* Carousel Items */}
           <div className="relative w-full h-full flex items-center justify-center">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
-              <div className="text-center">
-                <div className="text-8xl mb-4 animate-bounce">{fotos[currentIndex].emoji}</div>
-                <p className="text-2xl font-bold" style={{ color: '#2C3E50' }}>{fotos[currentIndex].title}</p>
-                <p className="text-gray-600 mt-2">Foto {currentIndex + 1} de {fotos.length}</p>
+            <img
+              src={fotos[currentIndex].image}
+              alt={fotos[currentIndex].title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-8">
+              <div>
+                <p className="text-white text-3xl font-bold">{fotos[currentIndex].title}</p>
+                <p className="text-white/80 mt-2">Foto {currentIndex + 1} de {fotos.length}</p>
               </div>
             </div>
           </div>

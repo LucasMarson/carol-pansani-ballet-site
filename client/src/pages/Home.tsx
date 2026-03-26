@@ -10,7 +10,6 @@ import Depoimentos from '@/components/Depoimentos';
 import Contato from '@/components/Contato';
 import MapaUnidades from '@/components/MapaUnidades';
 import InstagramFeed from '@/components/InstagramFeed';
-import GaleriaMomentos from '@/components/GaleriaMomentos';
 import Footer from '@/components/Footer';
 
 /**
@@ -45,7 +44,6 @@ export default function Home() {
         <Carousel />
         <Modalidades />
         <SobreCarol />
-        <GaleriaMomentos />
         <InstagramFeed />
         <Depoimentos />
         <MapaUnidades />
