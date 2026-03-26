@@ -8,8 +8,8 @@ import Home from "./pages/Home";
 import WhatsAppButton from "./components/WhatsAppButton";
 import { WaitlistPopup } from "./components/WaitlistPopup";
 
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
