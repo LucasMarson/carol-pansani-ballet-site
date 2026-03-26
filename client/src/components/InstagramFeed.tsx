@@ -25,7 +25,7 @@ export default function InstagramFeed() {
   // Lista de URLs de posts do Instagram para exibir (últimas 3 postagens)
   // Substitua pelos IDs reais dos seus posts
   const instagramPostUrls = [
-    'https://www.instagram.com/p/XXXXXXXXX/', // Substitua com ID real
+    'https://www.instagram.com/p/DWH_lBHjr43/', // Post 1
     'https://www.instagram.com/p/YYYYYYYYY/', // Substitua com ID real
     'https://www.instagram.com/p/ZZZZZZZZZ/', // Substitua com ID real
   ];
