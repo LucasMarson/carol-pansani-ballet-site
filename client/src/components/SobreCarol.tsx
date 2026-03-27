@@ -6,7 +6,7 @@ export default function SobreCarol() {
           {/* Carol Portrait Image */}
           <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-xl">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-carol-portrait-UZvk3ksMwfy3SAk7Zk5YMP.webp"
+              src="/images/Carol.jpg"
               alt="Carol Pansani - Diretora e Bailarina"
               className="w-full h-full object-cover"
             />

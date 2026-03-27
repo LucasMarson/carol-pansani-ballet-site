@@ -29,65 +29,39 @@ export default function InstagramFeed() {
   }, []);
 
   useEffect(() => {
-    // Buscar os 3 posts mais recentes do Instagram
-    const fetchInstagramPosts = async () => {
-      try {
-        setLoading(true);
-        
-        // Usar a API do Instagram Graph (você precisa configurar um token de acesso)
-        // Por enquanto, vamos usar uma abordagem alternativa que funciona sem autenticação
-        
-        // Posts reais do Instagram da Carol Pansani Ballet
-        const instagramPosts = [
-          {
-            id: '1',
-            url: 'https://www.instagram.com/p/DWH_lBHjr43/',
-            caption: 'Últimas aulas de ballet',
-            timestamp: 'Recente'
-          },
-          {
-            id: '2',
-            url: 'https://www.instagram.com/reel/DWSNtL1ji3c/',
-            caption: 'Momentos especiais da escola',
-            timestamp: 'Recente'
-          },
-          {
-            id: '3',
-            url: 'https://www.instagram.com/reel/DWANdmUjiKT/',
-            caption: 'Apresentações e eventos',
-            timestamp: 'Recente'
-          }
-        ];
-
-        setPosts(instagramPosts);
-        setError(null);
-
-        // Reprocessar embeds do Instagram
-        if ((window as any).instgrm) {
-          (window as any).instgrm.Embeds.process();
-        }
-      } catch (err) {
-        console.error('Erro ao buscar posts do Instagram:', err);
-        // Usar posts padrão em caso de erro
-        setPosts([
-          {
-            id: '1',
-            url: 'https://www.instagram.com/p/DWH_lBHjr43/',
-            caption: 'Últimas aulas de ballet',
-            timestamp: 'Hoje'
-          }
-        ]);
-      } finally {
-        setLoading(false);
+    // Posts reais do Instagram da Carol Pansani Ballet
+    // Você pode atualizar esses links manualmente quando postar algo novo
+    const instagramPosts = [
+      {
+        id: '1',
+        url: 'https://www.instagram.com/p/DWH_lBHjr43/',
+        caption: 'Últimas aulas de ballet',
+        timestamp: 'Recente'
+      },
+      {
+        id: '2',
+        url: 'https://www.instagram.com/reel/DWSNtL1ji3c/',
+        caption: 'Momentos especiais da escola',
+        timestamp: 'Recente'
+      },
+      {
+        id: '3',
+        url: 'https://www.instagram.com/reel/DWANdmUjiKT/',
+        caption: 'Apresentações e eventos',
+        timestamp: 'Recente'
       }
-    };
+    ];
 
-    fetchInstagramPosts();
+    setPosts(instagramPosts);
+    setError(null);
+    setLoading(false);
 
-    // Atualizar a cada 5 minutos automaticamente
-    const interval = setInterval(fetchInstagramPosts, 5 * 60 * 1000);
-
-    return () => clearInterval(interval);
+    // Reprocessar embeds do Instagram após um tempo
+    setTimeout(() => {
+      if ((window as any).instgrm) {
+        (window as any).instgrm.Embeds.process();
+      }
+    }, 1000);
   }, []);
 
   // Reprocessar embeds quando posts mudam
@@ -171,8 +145,6 @@ export default function InstagramFeed() {
             </p>
           </div>
         )}
-
-
 
         {/* Link para Instagram */}
         <div className="text-center mt-12">
