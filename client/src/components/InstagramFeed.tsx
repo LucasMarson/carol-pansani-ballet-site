@@ -30,23 +30,22 @@ export default function InstagramFeed() {
 
   useEffect(() => {
     // Posts reais do Instagram da Carol Pansani Ballet
-    // Você pode atualizar esses links manualmente quando postar algo novo
     const instagramPosts = [
       {
         id: '1',
-        url: 'https://www.instagram.com/p/DWH_lBHjr43/',
+        url: 'https://www.instagram.com/carolpansaniballet/reel/DWXT0rkDqVk/',
         caption: 'Últimas aulas de ballet',
         timestamp: 'Recente'
       },
       {
         id: '2',
-        url: 'https://www.instagram.com/reel/DWSNtL1ji3c/',
+        url: 'https://www.instagram.com/carolpansaniballet/reel/DWSNtL1ji3c/',
         caption: 'Momentos especiais da escola',
         timestamp: 'Recente'
       },
       {
         id: '3',
-        url: 'https://www.instagram.com/reel/DWANdmUjiKT/',
+        url: 'https://www.instagram.com/carolpansaniballet/p/DWH_lBHjr43/',
         caption: 'Apresentações e eventos',
         timestamp: 'Recente'
       }
