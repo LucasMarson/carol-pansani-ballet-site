@@ -94,9 +94,9 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
         {/* Layout Grid: Imagem Esquerda + Formulário Direita */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* LADO ESQUERDO - IMAGEM */}
-          <div className="hidden md:flex items-center justify-center bg-cover bg-center h-96">
+          <div className="hidden md:flex items-center justify-center bg-cover bg-center h-full w-full">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-jaguariana-waitlist-popup-6h5mT3ErZfzUYWgCkd4NTP.webp"
+              src="/images/Pietra.jpg"
               alt="Carol Pansani Ballet - Jaguariúna"
               className="w-full h-full object-cover"
             />
@@ -107,7 +107,7 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
             {/* Imagem em mobile (topo) */}
             <div className="md:hidden mb-3">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/carol-pansani-jaguariana-waitlist-popup-6h5mT3ErZfzUYWgCkd4NTP.webp"
+                src="/images/Pietra.jpg"
                 alt="Carol Pansani Ballet - Jaguariúna"
                 className="w-full h-24 object-cover rounded-lg"
               />
@@ -120,18 +120,18 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
 
             {/* Subtítulo */}
             <p className="text-xs md:text-sm text-[#08554c] font-semibold mb-1">
-              A nova unidade da Carol Pansani Ballet está chegando em Jaguariúna ✨
+              A unidade da Carol Pansani Ballet em Jaguariúna acabou de chegar ✨
             </p>
 
             {/* Descrição */}
             <p className="text-xs text-gray-700 mb-2 leading-snug">
-              Um lugar pensado para acolher, desenvolver e transformar através do movimento.
+              Um lugar pensado para acolher, desenvolver e transformar por meio do movimento.
             </p>
 
             {/* Destaque */}
             <div className="bg-gradient-to-r from-[#ece0ca] to-[#f5ede0] border-l-4 border-[#e0b6a0] p-2 mb-3 rounded-lg">
               <p className="text-[#1f545a] font-bold text-xs leading-tight">
-                🎁 Desconto + presente exclusivo para os 30 primeiros matriculados
+                🎁 Os 30 primeiros matriculados ganham desconto + mimo exclusivo! 
               </p>
             </div>
 
@@ -210,7 +210,7 @@ Enviado via: Carol Pansani Ballet - Nova Unidade Jaguariúna
                 disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-[#e0b6a0] to-[#d7a590] hover:from-[#d7a590] hover:to-[#c89580] text-white font-bold py-2 rounded-md transition disabled:opacity-50 disabled:cursor-not-allowed mt-2 shadow-md text-xs md:text-sm"
               >
-                {isSubmitting ? 'Enviando...' : 'Quero fazer parte'}
+                {isSubmitting ? 'Enviando...' : 'Quero aproveitar e fazer parte'}
               </button>
             </form>
           </div>

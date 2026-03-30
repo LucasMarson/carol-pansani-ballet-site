@@ -6,7 +6,7 @@ export default function Contato() {
       <div className="container">
         {/* Contact Section */}
         <div className="mb-16">
-          <h2 className="heading-section text-center mb-12">Entre em Contato</h2>
+          <h2 className="heading-section text-center mb-12">Entre em Contato e nos faça uma visita.</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {/* Instagram */}

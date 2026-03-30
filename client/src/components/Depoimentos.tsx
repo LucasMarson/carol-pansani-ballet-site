@@ -3,21 +3,21 @@ import { Star } from 'lucide-react';
 const depoimentos = [
   {
     id: 1,
-    nome: 'Beth',
-    relacao: 'Mãe da aluna Lorenza',
+    nome: 'Elisabeth Fidalgo',
+    relacao: 'Mãe de aluna - aluna da escola desde 2017',
     texto: 'Tenho muito orgulho de participar da história da escola, vê-la crescer e florescer. A Lorenza está aqui desde muito pequena e é nítido seu crescimento como pessoa, aprendendo a ser persistente, disciplinada, conhecer mais de si e sobre arte. A arte cura e engrandece a alma e a Carol Pansani Ballet proporciona essas vivências através das aulas, dos desafios propostos, dos eventos e espetáculos que fazem com que minha filha amadureça enquanto ser humano. A sensibilidade, profissionalismo e olhar apurado da Carol são fundamentais nesse processo.',
   },
   {
     id: 2,
     nome: 'Josi Bicudo',
-    relacao: 'Mãe de alunos',
+    relacao: 'Mãe de alunos de ballet e jazz',
     texto: 'Aqui, meus filhos são acolhidos com sensibilidade, dedicação e amor pela arte. O cuidado da equipe e o olhar artístico fazem toda a diferença. É lindo ver o quanto eles evoluem e se encantam com o ballet.',
   },
   {
     id: 3,
-    nome: 'Carol Pansani',
-    relacao: 'Fundadora e Diretora',
-    texto: 'Cada aluno que passa pela nossa escola deixa uma marca em meu coração. Ver o crescimento, a confiança e a transformação através da arte é o que me motiva todos os dias. Nossa missão é proporcionar muito mais que técnica: é proporcionar vivências que engrandecem a alma.',
+    nome: 'Rafa Moreira',
+    relacao: 'Aluna de ballet adulto, 27 Anos',
+    texto: 'Sou aluna da CPB há quase 3 anos e o que mais me chamou a atenção desde que entrei é a organização e preocupação com o bem-estar dos alunos. Do atendimento na recepção e no Whats à paciência da Carol nas aulas, da antecedência do cronograma dos espetáculos à clareza em cada coisa que precisa ser comunicada... Tudo isso colabora pra que a gente frequente cada aula e suba ao palco não só fazendo o que gosta, mas com paz no coração. E isso não é fácil de achar. Ser aluna aqui é sentir a paz de ser bem cuidada, com respeito e profissionalismo, enquanto você aprende e se desafia fazendo o que ama. 🩷',
   },
 ];
 
@@ -78,7 +78,7 @@ export default function Depoimentos() {
                 <div className="space-y-1">
                   <h3 
                     className="font-bold text-base"
-                    style={{ color: '#1f545a' }}
+                    style={{ color: '#1f545a', fontFamily: 'lexendDeca' }}
                   >
                     {depoimento.nome}
                   </h3>

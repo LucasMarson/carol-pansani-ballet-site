@@ -11,7 +11,7 @@ const JazzIcon = () => (
 );
 
 const ContemporaryIcon = () => (
-  <img src='/icons/coreografiaicon.png' width="40" height="40" />
+  <img src='/icons/contemporaneo.png' width="40" height="40" />
 );
 
 const YogaIcon = () => (
@@ -27,7 +27,7 @@ const modalidades = [
     highlights: [
       'Aulas a partir dos 3 anos, até a fase adulta',
       'Níveis progressivos e estruturados que respeitam o desenvolvimento de cada aluno',
-      'Cada etapa da jornada é especial e marcante, desde as primeiras descobertas do movimento',
+      'Cada etapa da jornada é especial e marcante, desde as primeiras descobertas do movimento, passando pelas conquistas simbólicas como a troca do collant, até a preparação técnica para a introdução às pontas.',
     ],
     niveis: 'Pré Ballet | Ballet Infantil | Ballet Elementar | Ballet Básico | Ballet Intermediário | Ballet Avançado | Ballet Adulto | Ballet Pontas',
     locais: ['Pedreira', 'Jaguariúna'],
@@ -39,23 +39,23 @@ const modalidades = [
     description: 'O jazz é uma modalidade dinâmica que combina técnica, musicalidade e expressão.',
     highlights: [
       'As aulas são organizadas por idade e/ou nível',
-      'Desenvolvimento de coordenação, ritmo, força e presença de palco',
-      'Linguagem versátil e envolvente que estimula a criatividade e a confiança',
+      'Isso permite que os alunos desenvolvam coordenação, ritimo, força e presença de palco',
+      'Com uma linguagem versátil e envolvente, o jazz estimula a criatividade e a confiança, proporcionando aos alunos uma expericnecia artística e cheia de energia e personalidade',
     ],
-    niveis: 'Jazz Infantil | Jazz Básico | Jazz Intermediário | Jazz Avançado',
+    niveis: 'Jazz Infantil | Jazz Juvenil | Jazz Adulto',
     locais: ['Pedreira', 'Jaguariúna'],
   },
   {
     id: 'contemporaneo',
     title: 'Dança Contemporânea',
     icon: ContemporaryIcon,
-    description: 'A dança contemporânea convida o aluno a explorar novas possibilidades de movimento.',
+    description: 'A dança contemporânea convida o aluno a explorar novas possibilidades de movimento, conectando técnica, consciência corporal e expressão.',
     highlights: [
       'Trabalhamos elementos como fluidez, peso, respiração e presença',
-      'Ampliam o repertório corporal do aluno e estimulam a sensibilidade artística',
-      'Valoriza a autenticidade do movimento e abre espaço para investigação e criatividade',
+      'Esses fatores ampliam o repertório corporal do aluno e estimulam a sensibilidade artística',
+      'É uma modalidade que valoriza a autenticidade do movimento e abre espaço para investigação e criatividade',
     ],
-    niveis: 'Contemporâneo Infantil | Contemporâneo Básico | Contemporâneo Intermediário | Contemporâneo Avançado',
+    niveis: 'Contemporâneo Juvenil | Contemporâneo Adulto',
     locais: ['Pedreira', 'Jaguariúna'],
   },
   {
@@ -65,10 +65,10 @@ const modalidades = [
     description: 'Um convite para desenvolver consciência corporal, equilíbrio e bem-estar.',
     highlights: [
       'Prática baseada em Hatha Yoga',
-      'Trabalha respiração, alongamento, força e concentração',
-      'Complementa o treinamento na dança e oferece momento de conexão consigo mesmo',
+      'Trabalha respiração, alongamento, força e concentração, contribuindo para um corpo mais saudável e presente',
+      'Além de complementa o treinamento na dança, o yoga oferece um momento de conexão consigo mesmo, ajudando alunos a cultivarem calma, foco e qualidade de movimento no dia a dia',
     ],
-    niveis: 'Yoga Infantil | Yoga Adulto',
+    niveis: 'Yoga Juvenil | Yoga Adulto',
     locais: ['Pedreira'],
   },
 ];
@@ -102,7 +102,7 @@ export default function Modalidades() {
                   <div className="flex items-center gap-4 text-left">
                     <Icon />
                     <div>
-                      <h3 className="font-bold text-lg" style={{ color: '#1f545a' }}>{modalidade.title}</h3>
+                      <h3 className="font-bold text-lg" style={{ color: '#1f545a', fontFamily:'BlackNo7' }}>{modalidade.title}</h3>
                       <p className="text-sm" style={{ color: '#d7c0b6' }}>{modalidade.description}</p>
                     </div>
                   </div>

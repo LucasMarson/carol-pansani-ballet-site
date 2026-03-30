@@ -44,10 +44,10 @@ export default function Home() {
         <Carousel />
         <Modalidades />
         <SobreCarol />
-        <InstagramFeed />
         <Depoimentos />
-        <MapaUnidades />
+        <InstagramFeed />
         <Contato />
+        <MapaUnidades />
       </main>
 
       <Footer onNavClick={function (sectionId: string): void {

@@ -14,14 +14,14 @@ const TheaterIcon = () => (
 );
 
 const WaltzCoupleIcon = () => (
-  <img src='/icons/coreografiaicon.png' width="50" height="50" />
+  <img src='/icons/coreografiaicon.png' width="50" height="50" color='#e0b6a0'/>
 );
 
 const ShoppingIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 12H32L30 28C30 29.1 29.1 30 28 30H12C10.9 30 10 29.1 10 28L8 12Z" stroke="#08554c" strokeWidth="1.5" fill="none" strokeLinejoin="round" />
-    <path d="M12 12L14 6H26L28 12" stroke="#08554c" strokeWidth="1.5" fill="none" strokeLinejoin="round" />
-    <path d="M16 18V26M20 18V26M24 18V26" stroke="#08554c" strokeWidth="1" strokeLinecap="round" />
+  <svg width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 12H32L30 28C30 29.1 29.1 30 28 30H12C10.9 30 10 29.1 10 28L8 12Z" stroke="#000000" strokeWidth="1.5" fill="none" strokeLinejoin="round" />
+    <path d="M12 12L14 6H26L28 12" stroke="#000000" strokeWidth="1.5" fill="none" strokeLinejoin="round" />
+    <path d="M16 18V26M20 18V26M24 18V26" stroke="#000000" strokeWidth="1" strokeLinecap="round" />
   </svg>
 );
 
@@ -71,13 +71,13 @@ export default function Servicos() {
             return (
               <div
                 key={index}
-                className="card-hover bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border-t-4"
+                className="card-hover bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border-t-4 color-#e0b6a0"
                 style={{ borderColor: '#e0b6a0' }}
               >
                 <div className="mb-4 flex justify-center">
                   <Icon />
                 </div>
-                <h3 className="font-bold text-lg mb-3 text-center" style={{ color: '#1f545a' }}>{servico.title}</h3>
+                <h3 className="font-bold text-lg mb-3 text-center" style={{ color: '#1f545a', fontFamily: 'BlackNo7' }}>{servico.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: '#1f545a' }}>{servico.description}</p>
               </div>
             );

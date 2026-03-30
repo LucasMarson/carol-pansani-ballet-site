@@ -17,7 +17,7 @@ export default function Diferenciais() {
           {/* Left Content */}
           <div className="space-y-6 order-1 md:order-1">
             <div>
-              <h2 className="heading-section">Uma Escola Diferente de Tudo</h2>
+              <h2 className="heading-section">Uma Escola diferente de tudo</h2>
               <div className="section-divider"></div>
             </div>
 

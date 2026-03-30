@@ -83,7 +83,7 @@ export default function InstagramFeed() {
           </div>
           <div className="section-divider mx-auto mb-6"></div>
           <p className="text-body max-w-2xl mx-auto">
-            Acompanhe os últimos momentos, aulas e apresentações direto do Instagram
+            <strong>Quer aprender passos e conhecer mais sobre as nossas aulas e produções?</strong><br/>Nos siga no Instagram.
           </p>
         </div>
 

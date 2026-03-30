@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const fotos = [
-  { id: 1, title: 'Espetáculo', image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/andeliraph-0968_0909eabe.webp' },
-  { id: 2, title: 'Apresentação', image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/DSC02043_2b8faf88.webp' },
-  { id: 3, title: 'Dueto', image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663366457387/fjdwjaCuRrvPJfYtyiVHm2/andeliraph-2188_4984c258.webp' },
+  { id: 1, title: 'Espetáculo', image: '/images/Alunas.jpg' },
+  { id: 2, title: 'Apresentação', image: '/images/Chocolates.jpg' },
+  { id: 3, title: 'Dueto', image: '/images/Duo.jpg' },
+  { id: 4, title: 'Dueto', image: '/images/AlunasPalco.jpg' },
 ];
 
 export default function Carousel() {
@@ -49,7 +50,7 @@ export default function Carousel() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-8">
               <div>
-                <p className="text-white text-3xl font-bold">{fotos[currentIndex].title}</p>
+
                 <p className="text-white/80 mt-2">Foto {currentIndex + 1} de {fotos.length}</p>
               </div>
             </div>

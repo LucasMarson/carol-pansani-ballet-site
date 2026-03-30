@@ -14,7 +14,7 @@ export default function Header({ onNavClick }: HeaderProps) {
     { label: 'Modalidades', id: 'modalidades' },
     { label: 'Sobre Carol', id: 'sobre' },
     { label: 'Instagram', id: 'instagram-feed' },
-    { label: 'Mapas', id: 'mapas' },
+    { label: 'Onde fica', id: 'mapas' },
     { label: 'Contato', id: 'contato' },
   ];
 
